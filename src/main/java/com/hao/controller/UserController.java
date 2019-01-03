@@ -2,13 +2,19 @@ package com.hao.controller;
 
 
 import com.hao.bean.User;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/index")
 public class UserController {
+
+    @Value(value = "${hao.secret}")
+    private String value;
+
 
     @RequestMapping("/test")
     public String demoController(){
@@ -22,6 +28,14 @@ public class UserController {
         user.setId(id);
         user.setName(name);
         return user;
+    }
+
+    @RequestMapping("get")
+    public Map<String, Object> get(@RequestParam String name){
+        Map<String,Object> map = new HashMap<>();
+        map.put("name", name);
+        map.put("value",value);
+        return map;
     }
 
 }

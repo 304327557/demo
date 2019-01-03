@@ -1,0 +1,16 @@
+hao:
+  secret: ${random.value}
+  number: ${random.int}
+  name: ttttt_tttt
+  address: http://www.${name}.com
+server:
+  port: 8070
+
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+server:
+  port: 8090
