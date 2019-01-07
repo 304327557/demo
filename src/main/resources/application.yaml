@@ -16,3 +16,8 @@ server:
   port: 8090
 logging:
   config: classpath:logback1-core.xml
+
+freemarker:
+  suffix: .html
+
+
