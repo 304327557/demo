@@ -17,7 +17,5 @@ server:
 logging:
   config: classpath:logback1-core.xml
 
-freemarker:
-  suffix: .html
 
 

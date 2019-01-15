@@ -12,13 +12,12 @@ public class StudentController {
 
     @RequestMapping("/show")
     public String show(Model model) {
-
         model.addAttribute("p","hellllllllllllllllllllllll");
         Student s = new Student();
         s.setId(100001);
         s.setName("哈哈哈哈");
         model.addAttribute("stu", s);
 
-        return "show";
+        return "show.ftl";
     }
 }
